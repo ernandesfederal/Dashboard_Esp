@@ -28,16 +28,15 @@ def load_data():
 # Carregar a imagem
 #image_path = "C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/Dashboard_Esp/fig.png"
 # Definir o caminho da imagem
-image_path = "C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/Dashboard_Esp/fig.png"
-
-# Função para carregar a imagem
+# Carregar a imagem
 def load_image():
-    return Image.open(image_path)
+    return "C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/Dashboard_Esp/fig.png"
+
 
 # Usar Streamlit para exibir a imagem
-s
+
 # Exibir a imagem na lateral com largura ajustada
-#st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=300)  # Ajuste o valor de width conforme necessário
+st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=300)  # Ajuste o valor de width conforme necessário
 # Carregar dados
 df = load_data()
 
