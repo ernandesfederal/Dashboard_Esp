@@ -18,7 +18,7 @@ st.markdown("Este dashboard explora dados de aluguel de imóveis, exibindo infor
 @st.cache_data
 def load_data():
     try:
-        data = pd.read_csv("C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\houses_to_rent_limp.csv", sep=",")
+        data = pd.read_csv("C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\Dashboard_Esp\houses_to_rent_limp.csv", sep=",")
         return data
     except FileNotFoundError:
         st.error("Arquivo 'houses_to_rent_limp.csv' não encontrado. Verifique o caminho do arquivo.")
@@ -26,7 +26,7 @@ def load_data():
 
 # Carregar a imagem
 def load_image():
-    return ""C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\fig.png"/fig.png"
+    return "C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\Dashboard_Esp\fig.png/fig.png"
 
 # Exibir a imagem na lateral
 st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=500)
