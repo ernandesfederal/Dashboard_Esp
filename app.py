@@ -25,9 +25,8 @@ def load_data():
         return None
 
 # Carregar a imagem
-image_path = r"C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/Dashboard_Esp/fig.png"
 def load_image():
-    returnimage_path
+    return "C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/fig.png"
 
 # Exibir a imagem na lateral
 st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=500)
