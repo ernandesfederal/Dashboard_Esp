@@ -19,7 +19,7 @@ Este dashboard permite a exploração interativa de dados de aluguel de imóveis
 - **NumPy**: Para operações matemáticas e manipulação de arrays.
 
 ## 🎓 Universidade Federal do Maranhão - UFMA
-###  Visualização de Dados
+###  **Disciplina** Visualização de Dados
 
 Projeto desenvolvido como parte da **Especialização em Análise de Dados e Inteligência Artificial** da UFMA.
 
