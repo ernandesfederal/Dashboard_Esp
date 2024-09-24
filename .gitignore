@@ -31,8 +31,7 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-# Dashboard de Preços de Aluguel
-https://dashboardesp-bmecnlosr4tq4cj62btwih.streamlit.app/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
