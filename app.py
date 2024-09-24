@@ -16,7 +16,7 @@ st.markdown("""
 **Especialização em Análise de Dados e Inteligência Artificial**  
 Aluno: **Ernandes Guedes Moura**  
 Email: [ernandesfedera1@gmail.com](mailto:ernandesfedera1@gmail.com)
-"""
+""")
 
 # Título do dashboard
 st.title("🏠 Dashboard de Aluguel de Imóveis")
