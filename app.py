@@ -18,7 +18,7 @@ st.markdown("Este dashboard explora dados de aluguel de imóveis, exibindo infor
 @st.cache_data
 def load_data():
     try:
-        data = pd.read_csv("C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/houses_to_rent_limp.csv", sep=",")
+        data = pd.read_csv("C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\houses_to_rent_limp.csv", sep=",")
         return data
     except FileNotFoundError:
         st.error("Arquivo 'houses_to_rent_limp.csv' não encontrado. Verifique o caminho do arquivo.")
