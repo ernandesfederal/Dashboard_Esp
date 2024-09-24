@@ -12,8 +12,8 @@ sns.set(style="ticks")  # Usar estilo "ticks" para evitar grades
 # Título da Universidade e Informações do Aluno
 st.markdown("""
 # Universidade Federal do Maranhão - UFMA  
-### Especialização em Análise de Dados e Inteligência Artificial
-**Disciplina:** Visualização de Dados
+Especialização em Análise de Dados e Inteligência Artificial
+Disciplina: Visualização de Dados
 Aluno: **Ernandes Guedes Moura**  
 Email: [ernandesfedera1@gmail.com](mailto:ernandesfedera1@gmail.com)
 """)
