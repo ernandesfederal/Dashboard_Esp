@@ -27,11 +27,11 @@ def load_data():
 
 
 # Carregar a imagem
-#def load_image():
-#    return r"C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\Dashboard_Esp\houses_to_rent_limp.csv/fig.png"
+def load_image():
+    return r"C:\Users\Acer\OneDrive - ifpi.edu.br\Documentos\Ciência de Dados\Espec_Ciecia_Dados_UFMA\Visualização de dados\Dashboard_UFMA4\Dashboard_Esp/fig.png"
 
 # Exibir a imagem na lateral
-#st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=500)
+st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=500)
 # Exibir a imagem na lateral com largura ajustada
 #st.sidebar.image(load_image(), caption="Aluguel de Imóveis", use_column_width=True, width=300)  # Ajuste o valor de width conforme necessário
 # Carregar dados
