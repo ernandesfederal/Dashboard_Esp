@@ -24,6 +24,7 @@ def load_data():
         st.error("Arquivo 'houses_to_rent_limp.csv' não encontrado. Verifique o caminho do arquivo.")
         return None
 
+
 # Carregar a imagem
 #def load_image():
 #    return "C:/Users/Acer/OneDrive - ifpi.edu.br/Documentos/Ciência de Dados/Espec_Ciecia_Dados_UFMA/Visualização de dados/Dashboard_UFMA4/fig.png"
