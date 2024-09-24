@@ -5,8 +5,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
+
 # Configurações de estilo do Seaborn
 sns.set(style="ticks")  # Usar estilo "ticks" para evitar grades
+
+# Título da Universidade e Informações do Aluno
+st.markdown("""
+# Universidade Federal do Maranhão - UFMA  
+**Especialização em Análise de Dados e Inteligência Artificial**  
+Aluno: **Ernandes Guedes Moura**  
+Email: [ernandesfedera1@gmail.com](mailto:ernandesfedera1@gmail.com)
+""")
 
 # Título do dashboard
 st.title("🏠 Dashboard de Aluguel de Imóveis")
