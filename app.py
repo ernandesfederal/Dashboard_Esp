@@ -73,16 +73,60 @@ if df is not None:
         st.subheader("🔍 Dados Filtrados")
         st.write(filtered_df)
 
-    # Gráfico de dispersão - Banheiro vs Valor do Aluguel
+    # Gráfico de dispersão - Banheiro-Número de Quartos vs Valor do Aluguel por Cidades
     st.subheader("📊 Gráfico: Banheiros vs Valor do Aluguel")
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.scatterplot(x='bathroom', y='rent_amount', data=filtered_df, hue='city', ax=ax)
+    sns.scatterplot(x='bathroom', y='rent_amount', data=filtered_df, ax=ax)
     ax.set_title("Banheiros vs Valor do Aluguel")
     ax.set_xlabel("Número de Banheiros")
     ax.set_ylabel("Valor do Aluguel (R$)")
     ax.spines['top'].set_visible(False)  # Remove a borda superior
     ax.spines['right'].set_visible(False)  # Remove a borda direita
     st.pyplot(fig)
+    
+######################################################
+# Gráfico de barras - Aluguel médio por número de quartos
+st.subheader("🏠 Aluguel Médio por Número de Quartos")
+
+# Calcula o aluguel médio por número de quartos
+mean_rent_rooms = filtered_df.groupby('rooms')['rent_amount'].mean().reset_index()
+
+# Cria a figura
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Cria o gráfico de barras
+barplot = sns.barplot(x='rooms', y='rent_amount', data=mean_rent_rooms, ax=ax, palette="Blues_d")
+
+# Definir o título
+ax.set_title("Aluguel Médio por Número de Quartos")
+
+# Remove os eixos desnecessários
+ax.set_ylabel("")  # Remove rótulo do eixo y
+ax.spines['top'].set_visible(False)  # Remove a borda superior
+ax.spines['right'].set_visible(False)  # Remove a borda direita
+ax.spines['left'].set_visible(False)  # Remove a borda esquerda
+ax.spines['bottom'].set_visible(False)  # Remove a borda inferior
+
+# Mantém os números de quartos (x) visíveis
+ax.set_xlabel("Número de Quartos")
+
+# Remove as marcações e rótulos do eixo y (valores do aluguel)
+ax.set_yticks([])
+
+# Adiciona os valores acima das barras
+#f'R${height:,.0f}'
+for p in barplot.patches:
+    height = p.get_height()  # Obtém a altura da barra
+    ax.text(p.get_x() + p.get_width() / 2., height + 50,  # Adiciona valor acima da barra
+            f'R$ {int(height)}', 
+            ha='center', 
+            va='bottom', 
+            fontsize=10, 
+            color='black', 
+            weight='semibold')
+
+# Exibe o gráfico
+st.pyplot(fig)
 #############
  # Gráficos de distribuição - Boxplot interativo e Histograma
 if st.sidebar.checkbox("📊 Exibir Boxplot por Cidade e Histograma"):
