@@ -84,17 +84,34 @@ if df is not None:
     ax.spines['right'].set_visible(False)  # Remove a borda direita
     st.pyplot(fig)
 
-    # Gráfico de barras - Aluguel médio por número de quartos
-    st.subheader("🏠 Aluguel Médio por Número de Quartos")
-    mean_rent_rooms = filtered_df.groupby('rooms')['rent_amount'].mean().reset_index()
-    fig, ax = plt.subplots(figsize=(10, 6))
-    sns.barplot(x='rooms', y='rent_amount', data=mean_rent_rooms, ax=ax, palette="Blues_d")
-    ax.set_title("Aluguel Médio por Número de Quartos")
-    ax.set_xlabel("Número de Quartos")
-    ax.set_ylabel("Aluguel Médio (R$)")
-    ax.spines['top'].set_visible(False)  # Remove a borda superior
-    ax.spines['right'].set_visible(False)  # Remove a borda direita
-    st.pyplot(fig)
+# Gráfico de dispersão - Banheiro vs Valor do Aluguel
+st.subheader("📊 Gráfico: Banheiros vs Valor do Aluguel")
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Cria o gráfico de dispersão
+scatter = sns.scatterplot(x='bathroom', y='rent_amount', data=filtered_df, hue='city', ax=ax)
+
+# Definir o título e os rótulos
+ax.set_title("Banheiros vs Valor do Aluguel")
+ax.set_xlabel("Número de Banheiros")
+ax.set_ylabel("Valor do Aluguel (R$)")
+
+# Remove as bordas superior e direita
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+# Adiciona os valores acima dos pontos
+for line in range(0, filtered_df.shape[0]):
+    ax.text(filtered_df.bathroom.iloc[line], 
+            filtered_df.rent_amount.iloc[line] + 50,  # Ajuste o valor para posicionar acima do ponto
+            f'R${filtered_df.rent_amount.iloc[line]:,.0f}', 
+            horizontalalignment='left', 
+            size='small', 
+            color='black', 
+            weight='semibold')
+
+# Exibe o gráfico
+st.pyplot(fig)
 
  # Gráficos de distribuição - Boxplot interativo e Histograma
 if st.sidebar.checkbox("📊 Exibir Boxplot por Cidade e Histograma"):
