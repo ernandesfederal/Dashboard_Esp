@@ -157,8 +157,8 @@ if st.sidebar.checkbox("📊 Exibir Boxplot por Cidade e Histograma"):
     fig_hist.add_trace(go.Histogram(x=all_cities_df['rent_amount'], nbinsx=20, marker_color='skyblue', name='Histograma'))
 
     # Linha de densidade vermelha contínua
-    fig_hist.add_trace(go.Scatter(x=np.sort(all_cities_df['rent_amount']),
-                                  y=np.histogram(all_cities_df['rent_amount'], bins=20, density=True)[0],
+    fig_hist.add_trace(go.Scatter(x=np.sort( filtered_df['rent_amount']),
+                                  y=np.histogram( filtered_df['rent_amount'], bins=20, density=True)[0],
                                   mode='lines', name='Densidade', line=dict(color='red', width=2)))  # Linha contínua
 
     # Ajustar layout do histograma
