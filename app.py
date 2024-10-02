@@ -63,7 +63,7 @@ if df is not None:
     rent_filter = st.sidebar.slider("Selecione a faixa de preço do aluguel", 
                                     min_value=int(df['rent_amount'].min()), 
                                     max_value=int(df['rent_amount'].max()), 
-                                    value=( min_value, max_value)
+                                    value=( int(df['rent_amount'].min()), int(df['rent_amount'].max())))
 
     # Aplicar os filtros
     filtered_df = df[(df['city'] == city_filter) & (df['rent_amount'].between(rent_filter[0], rent_filter[1]))]
